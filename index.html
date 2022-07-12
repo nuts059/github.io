@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレーンJavaScriptアウトプットページ</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="header_content">
+            <h1>機能実装ページ</h1>
+            <div class="header_nav" id="headerNav">
+                <div class="header_nav_link" id="headerNavLink">
+                    <div class="header_nav_link_contents">
+                        <a href="" target="_blank">トップページ</a>
+                        <a href="" target="_blank">メインコンテンツ１</a>
+                        <a href="" target="_blank">メインコンテンツ２</a>
+                        <a href="" target="_blank">よくある質問</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main_content">
+            <h2 id="h2SlideDown">スライドダウンコンテンツ</h2>
+            <ul class="main_content_menu" id="slideDownContents">
+                <li>テキストテキスト</li>
+                <li>てきすとてきすと</li>
+                <li>texttexttext</li>
+            </ul>
+        </div>
+       <div class="sub_content">
+            <h2>モーダルウィンドウ</h2>
+            <button class="modal_button" id="modalOpen">クリックするとモーダルウィンドウが開きます。</button>
+       </div>
+       <div class="modal_content" id="modalContents">
+        <div class="modal_content_inner">
+            <div class="modal_content_inner_title">
+                <p>モーダルの中身的な</p>
+                <button class="modal_button_inner" id="modalClose">モーダルを閉じる</button>
+            </div>
+        </div>
+    </div>
+    </main>
+
+</body>
+<script src="./index.js"></script>
+
+</html>
