@@ -15,15 +15,16 @@
 
   gtag('config', 'G-40431PRYSH');
 </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=fetch" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="header_content">
-            <h1>機能実装ページ</h1>
+            <h1><a href="./index.html">機能実装ページ</a></h1>
             <div class="header_nav" id="headerNav">
                 <div class="header_nav_link" id="headerNavLink">
                     <div class="header_nav_link_contents">
-                        <a href="" target="_blank">トップページ</a>
+                        <a href="./index.html" target="_blank">トップページ</a>
                         <a href="" target="_blank">メインコンテンツ１</a>
                         <a href="" target="_blank">メインコンテンツ２</a>
                         <a href="" target="_blank">よくある質問</a>
@@ -34,11 +35,11 @@
     </header>
     <main>
         <div class="main_content">
-            <h2 id="h2SlideDown">スライドダウンコンテンツ</h2>
+            <h2 id="h2SlideDown">アクセス情報</h2>
             <ul class="main_content_menu" id="slideDownContents">
-                <li>テキストテキスト</li>
-                <li>てきすとてきすと</li>
-                <li>texttexttext</li>
+                <li id="nowData"></li>
+                <li id="weather"></li>
+                <li id="userAgent"></li>
             </ul>
         </div>
        <div class="sub_content">
@@ -46,14 +47,19 @@
             <button class="modal_button" id="modalOpen">クリックするとモーダルウィンドウが開きます。</button>
        </div>
        <div class="modal_content" id="modalContents">
-        <div class="modal_content_inner">
-            <div class="modal_content_inner_title">
-                <p>モーダルの中身的な</p>
-                <button class="modal_button_inner" id="modalClose">モーダルを閉じる</button>
+            <div class="modal_content_inner">
+                <div class="modal_content_inner_title">
+                    <p>モーダルが開いたと思ったら</p>
+                    <button class="modal_button_inner" id="modalClose">モーダルを閉じる</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div></div>
+        <div class="youtube_content">
+            <h2 id="h2SlideDownYoutube">My Youtube</h2>
+            <div class="youtube" id="player">
+                <iframe width="100%" height="500px" src="https://www.youtube.com/embed/gFnpZwtwUb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </main>
 
 </body>

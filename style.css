@@ -22,6 +22,10 @@ h2{
     padding: 0 5%;
     background-color: #F3F3F5;
 }
+.header_content h1 a{
+    text-decoration: none;
+    color: inherit;
+}
 .header_nav{
     background: url(./hamburgermenu.png);
     width: 62px;
@@ -86,12 +90,12 @@ main{
     border-top: none;
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-bottom: 7px solid black;
+    border-top: 7px solid black;
 }
 .main_content h2.hide_item:after{
     content: '';
-    border-top: 7px solid black;
-    border-bottom: none;
+    border-bottom: 7px solid black;
+    border-top: none;
 }
 .main_content_menu{
     line-height: 0;
@@ -124,8 +128,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid black;
 }
-
+/* モーダル */
 .modal_button {
     background: #d7003a;
     min-height: 62px;
@@ -133,7 +138,7 @@ main{
     min-width: 320px;
     text-align: center;
     padding-bottom: 0;
-    margin-left: 0;
+    margin: 5% 0 0 0 ;
     display: block;
     border-radius: 4px;
     text-decoration: none;
@@ -152,6 +157,7 @@ main{
     height: 100%;
     background: rgb(0 0 0 / 50%);
     top: 0;
+    left: 0;
 }
 .modal_content_inner_title{
     display: flex;
@@ -167,7 +173,11 @@ main{
     background: white;
     opacity: unset;
     width: 70%;
-    margin: 20% auto;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
 }
 .modal_button_inner{
     background: #cccccc;
@@ -182,4 +192,40 @@ main{
      font-size: 14px;
     border: none;
     margin: 0 0 0 20px;
+}
+/* youtube */
+.youtube_content h2{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+}
+.youtube_content h2:after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: none;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid black;
+
+}
+.youtube_content h2.hide_item:after{
+    content: '';
+    border-bottom: 7px solid black;
+    border-top: none;
+}
+.youtube{
+    line-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    margin: 5% 0 0 0;
+    transition: 0.01s;
+}
+.youtube.show_contents{
+    opacity: 1;
+    visibility: visible;
+    line-height: unset;
+    transition: 0.01s;
 }
