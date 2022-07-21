@@ -50,19 +50,10 @@ function showClock() {
 setInterval('showClock()',1000);
 
   function weather(){
-    // 現在の日時を取得
-    const now = new Date();
-    // 位置情報を取得開始
+    const changeTarget = document.getElementById('weather');
     if (navigator.geolocation) {
-        // 位置情報が取得成功した時
-        navigator.geolocation.getCurrentPosition(function (position) {
-            // 緯度経度を取得
-            const basePosition = position.coords;
-            const lat = basePosition.latitude;
-            const lng = basePosition.longitude;
-            // WEB API を使用し、現在地の現在の天気を取得
-            const API_KEY = "c092226559b6638f04b5e93e2602f667";
-            const url = "https://api.openweathermap.org/data/2.5/onecall?lat=35.681236&lon=139.767125&units=metric&lang=ja&appid=c092226559b6638f04b5e93e2602f667"
+        // navigator.geolocation.getCurrentPosition(function () {
+            const url = 'https://api.openweathermap.org/data/2.5/weather?id=1850147&units=metric&appid=c092226559b6638f04b5e93e2602f667';
             const request = new XMLHttpRequest();
             request.open("GET", url, false);
             request.onload = function () {
@@ -70,16 +61,14 @@ setInterval('showClock()',1000);
                 const weatherName = nowData.weather[0].main;
                 const weatherTemp = nowData.main.temp;
                 const cityName = nowData.name;
-                console.log(nowData,weatherName,weatherTemp,cityName);
-                const changeTarget = document.getElementById('weather');
                 changeTarget.innerHTML = (cityName + "\n" + weatherName + "\n" + weatherTemp + '<span class="unit">℃</span>');
             };
             request.send();
-        },
+        // },
         // 位置情報の取得失敗した時
-        function () {
-            changeTarget.innerHTML('位置情報の取得に失敗しました。');
-        });
+        // function () {
+        //     changeTarget.innerHTML('位置情報の取得に失敗しました。');
+        // });
     } else {
         changeTarget.innerHTML("位置情報を取得できませんでした……");
     }
