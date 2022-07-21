@@ -62,17 +62,15 @@ setInterval('showClock()',1000);
             const lng = basePosition.longitude;
             // WEB API を使用し、現在地の現在の天気を取得
             const API_KEY = "c092226559b6638f04b5e93e2602f667";
-            const url = "https://api.openweathermap.org/data/2.5/onecall?lat=35.681236&lon=139.767125&units=metric&lang=ja&appid={YOUR API KEY}"
+            const url = "https://api.openweathermap.org/data/2.5/onecall?lat=35.681236&lon=139.767125&units=metric&lang=ja&appid=c092226559b6638f04b5e93e2602f667"
             const request = new XMLHttpRequest();
-            request.open("GET", url, true);
-            request.responseType = "json";
-        
-            // 現在の天気に関する関数
+            request.open("GET", url, false);
             request.onload = function () {
-                const nowData = this.response;
+                const nowData = JSON.parse(request.response);
                 const weatherName = nowData.weather[0].main;
                 const weatherTemp = nowData.main.temp;
                 const cityName = nowData.name;
+                console.log(nowData,weatherName,weatherTemp,cityName);
                 const changeTarget = document.getElementById('weather');
                 changeTarget.innerHTML = (cityName + "\n" + weatherName + "\n" + weatherTemp + '<span class="unit">℃</span>');
             };
@@ -109,3 +107,23 @@ setInterval('showClock()',1000);
     })()
   }
 UserAgent();
+
+function toggle(){
+    const yes = document.getElementById('yes');
+    const no =  document.getElementById('no');
+    const twitter = document.getElementById('twitter');
+    const instagram = document.getElementById('instagram');
+    yes.addEventListener('change', () =>{
+        console.log('yesChecked');
+        twitter.style.display = 'block';
+        instagram.style.display = 'none';
+        
+    });
+    no.addEventListener('change', () =>{
+        console.log('noChecked');
+        twitter.style.display = 'none';
+        instagram.style.display = 'block';
+    });
+}
+
+toggle();
