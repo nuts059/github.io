@@ -103,13 +103,11 @@ function toggle(){
     const twitter = document.getElementById('twitter');
     const instagram = document.getElementById('instagram');
     yes.addEventListener('change', () =>{
-        console.log('yesChecked');
         twitter.style.display = 'block';
         instagram.style.display = 'none';
         
     });
     no.addEventListener('change', () =>{
-        console.log('noChecked');
         twitter.style.display = 'none';
         instagram.style.display = 'block';
     });

@@ -277,6 +277,9 @@ input[type="radio"]:checked + label[for="no"]{
 .instagram{
     display: none;
 }
+.toggle_sns{
+    margin: 10px 0;
+}
 .toggle_sns a{
     color: #00004C;
     text-decoration: none;
